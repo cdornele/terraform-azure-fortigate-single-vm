@@ -1,0 +1,15 @@
+name: Generic-CI
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
+      - master
+
+permissions:
+  contents: write
+
+jobs:
+  ci:
+    uses: cdornele/terraform-modules-ci/.github/workflows/ci-close-tf-modules.yml@development
