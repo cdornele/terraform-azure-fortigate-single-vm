@@ -1,3 +1,25 @@
+<!-- BEGIN_TF_DOCS -->
+## Version compatibility by CD Azure Modules
+
+| Module version | Terraform version | AzureRM version |
+| -------------- | ----------------- | --------------- |
+| >= 7.x.x       | 1.3.x             | >= 3.0          |
+| >= 6.x.x       | 1.x               | >= 3.0          |
+| >= 5.x.x       | 0.15.x            | >= 2.0          |
+| >= 4.x.x       | 0.13.x / 0.14.x   | >= 2.0          |
+| >= 3.x.x       | 0.12.x            | >= 2.0          |
+| >= 2.x.x       | 0.12.x            | < 2.0           |
+| <  2.x.x       | 0.11.x            | < 2.0           |
+
+## Contributing
+
+If you’d like to contribute to this repository, you’re welcome to use our pre-commit Git hook configuration. It helps automate file updates and formatting while ensuring compliance with our Terraform module best practices.
+
+For more details, check out the CONTRIBUTING.md file.
+
+## Usage
+
+```hcl
 #--------------------------------------------*--------------------------------------------
 #  Main Example: Fortigate Single VM - Main
 #--------------------------------------------*--------------------------------------------
@@ -201,3 +223,46 @@ module "fortigate" {
 
 # end
 #--------------------------------------------*--------------------------------------------
+```
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| azurerm | n/a |
+| random | n/a |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [azurerm_marketplace_agreement.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/marketplace_agreement) | resource |
+| [azurerm_network_interface.fgt_trust_port2](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_interface) | resource |
+| [azurerm_network_interface.fgt_untrust_port1](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_interface) | resource |
+| [azurerm_public_ip.fgt_public_ip](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/public_ip) | resource |
+| [azurerm_storage_account.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_account) | resource |
+| [azurerm_virtual_machine.fgt-vm](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_machine) | resource |
+| [random_id.this](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/id) | resource |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| fortinet\_prefix | A prefix for the Fortinet resources. | `string` | `"FGT"` | no |
+| fortinet\_settings | The settings for the Fortinet VM. | `any` | n/a | yes |
+| fortinet\_trust\_subnet\_id | The ID of the subnet to which the trust network interface will be attached. | `string` | n/a | yes |
+| fortinet\_untrust\_subnet\_id | The ID of the subnet to which the untrust network interface will be attached. | `string` | n/a | yes |
+| fortinet\_vm\_password | The password for the Fortinet VM. | `string` | n/a | yes |
+| fortinet\_vm\_username | The username for the Fortinet VM. | `string` | n/a | yes |
+| location | The location/region where the resources will be created. | `string` | n/a | yes |
+| resource\_group\_name | The name of the resource group in which to create the resources. | `string` | n/a | yes |
+| tags | A mapping of tags to assign to the resources. | `map(string)` | `{}` | no |
+
+## Outputs
+
+No outputs.
+<!-- END_TF_DOCS -->
