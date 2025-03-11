@@ -1,11 +1,12 @@
-#--------------------------------------------*--------------------------------------------
-#  Main Example: Fortigate Single VM - Main
-#--------------------------------------------*--------------------------------------------
+# Example - Fortigate Single VM
 
-provider "azurerm" {
-  features {}
-}
+## Diagram
 
+![alt text](../../.doc/diagram.png)
+
+## Usage
+
+```hcl
 module "resource_group-fgt" {
   source  = "cdornele/resource-group/azure"
   version = "1.0.0"
@@ -199,5 +200,11 @@ module "fortigate" {
                                 } 
 }
 
-# end
-#--------------------------------------------*--------------------------------------------
+```
+
+## Contributing
+  
+If you’d like to contribute to this repository, you’re welcome to use our pre-commit Git hook configuration. It helps automate file updates and formatting while ensuring compliance with our Terraform module best practices.
+  
+For more details, check out the CONTRIBUTING.md file.
+
