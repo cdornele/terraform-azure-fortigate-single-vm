@@ -2,7 +2,7 @@
 
 ## Diagram
 
-![alt text](../../.doc/diagram.png)
+![alt text](https://github.com/cdornele/azure-architecture-reference/blob/main/NVA/Fortinet/Single-VM/diagram.png)
 
 ## Usage
 
