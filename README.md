@@ -221,6 +221,16 @@ module "fortigate" {
   }
 }
 
+output "fortigate_public_ip" {
+  description = "value of the fortigate public ip"
+  value       = module.fortigate.fortigate_untrust_public_ip
+}
+
+output "fortigate_admin_port" {
+  description = "value of the fortigate admin port"
+  value       = module.fortigate.fortigate_admin_port
+}
+
 # end
 #--------------------------------------------*--------------------------------------------
 ```
@@ -264,5 +274,8 @@ No modules.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| fortigate\_admin\_port | Fortigate admin port |
+| fortigate\_untrust\_public\_ip | Fortigate untrust public IP |
 <!-- END_TF_DOCS -->
